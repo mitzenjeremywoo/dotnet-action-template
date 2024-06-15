@@ -16,7 +16,7 @@ jobs:
         REGISTRY: ghcr.io
         IMAGE_NAME: ${{ github.repository }}
 
-    needs: ['build']
+    #needs: ['build']
 
     runs-on: ${{ inputs.agent }}
 
