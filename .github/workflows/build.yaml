@@ -21,6 +21,9 @@ on:
       buildOutputPath:
         type: string
         default: 'release'
+      artifactDownloadPath:
+        type: string
+        default: 'artifactPath'
    
 jobs:       
   build:   
@@ -89,7 +92,7 @@ jobs:
       packages: write
       contents: read
       attestations: write
-      id-token: write   
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
@@ -97,6 +100,7 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: buildArtifact
+          path: ${{ inputs.dockerContext }}/${{ inputs.artifactDownloadPath }}
 
       - name: Display structure of artifact files
         run: ls -R
