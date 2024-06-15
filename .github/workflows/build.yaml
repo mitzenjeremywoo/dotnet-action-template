@@ -71,7 +71,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: artifact-${{ matrix.dotnet-version }}
+          name: buildArtifact
           path: ${{ github.workspace  }}/src/ConsoleApp1/ConsoleApp1/bin/Release/net8.0/
         
 
